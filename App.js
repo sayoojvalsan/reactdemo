@@ -17,7 +17,7 @@ export default App = () => {
 
   return (
     <View style={{ flex: 1, padding: 24 }}>
-      {isLoading ? <ActivityIndicator/> : (
+      {isLoading ? <ActivityIndicator size="large" color="#0000ff" /> : (
         <MyListView style={{ flex: 1, width: '100%', height: '100%' }}
           data={data}
         />
