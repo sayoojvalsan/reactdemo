@@ -29,11 +29,8 @@ public class ListViewManager extends SimpleViewManager<RecyclerView>{
     @Override
     protected RecyclerView createViewInstance(ThemedReactContext reactContext) {
         RecyclerView recyclerView = new RecyclerView(reactContext);
-        String[] arr = new String[10];
-        for(int i = 0 ; i < 10; i ++){
-            arr[i] = String.valueOf(i);
-        }
-        CustomAdapter customAdapter = new CustomAdapter(Arrays.asList(arr));
+
+        CustomAdapter customAdapter = new CustomAdapter(new ArrayList<>());
         // Set CustomAdapter as the adapter for RecyclerView.
         recyclerView.setAdapter(customAdapter);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(reactContext);
