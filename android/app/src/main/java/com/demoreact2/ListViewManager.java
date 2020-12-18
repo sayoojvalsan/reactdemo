@@ -48,7 +48,6 @@ public class ListViewManager extends SimpleViewManager<RecyclerView>{
         for(int i = 0; i < data.size(); i ++){
             ReadableMap map = data.getMap(i);
             String comment = map.getString("body");
-            Log.d("TAG", "comment = " + comment);
             comments.add(comment);
         }
         CustomAdapter adapter = (CustomAdapter) recyclerView.getAdapter();
