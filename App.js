@@ -3,7 +3,6 @@ import {ActivityIndicator, FlatList, StyleSheet, View, Text } from 'react-native
 
 import MyListView from './ListView';
 
-
 export default App = () => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);

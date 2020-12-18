@@ -2,6 +2,7 @@ package com.demoreact2;
 
 import android.util.Log;
 
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -35,7 +36,12 @@ public class ListViewManager extends SimpleViewManager<RecyclerView>{
         CustomAdapter customAdapter = new CustomAdapter(Arrays.asList(arr));
         // Set CustomAdapter as the adapter for RecyclerView.
         recyclerView.setAdapter(customAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(reactContext));
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(reactContext);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
+                linearLayoutManager.getOrientation());
+        recyclerView.addItemDecoration(dividerItemDecoration);
+
         return recyclerView;
     }
 
