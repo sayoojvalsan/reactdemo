@@ -7,9 +7,18 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
 
-    private String[] localDataSet;
+    private List<String> localDataSet = new ArrayList<>();
+
+    public void setData(List<String> data) {
+        localDataSet.clear();
+        localDataSet.addAll(data);
+        notifyDataSetChanged();
+    }
 
     /**
      * Provide a reference to the type of views that you are using
@@ -36,8 +45,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
      * @param dataSet String[] containing the data to populate views to be used
      * by RecyclerView.
      */
-    public CustomAdapter(String[] dataSet) {
-        localDataSet = dataSet;
+    public CustomAdapter(List<String> dataSet) {
+        localDataSet.clear();
+        localDataSet.addAll(dataSet);
     }
 
     // Create new views (invoked by the layout manager)
@@ -56,12 +66,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        viewHolder.getTextView().setText(localDataSet[position]);
+        viewHolder.getTextView().setText(localDataSet.get(position));
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return localDataSet.length;
+        return localDataSet.size();
     }
 }

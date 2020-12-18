@@ -3,6 +3,7 @@
     android:layout_height="40dp"
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
+    android:background="@color/catalyst_redbox_background"
     android:gravity="center_vertical">
 
     <TextView
